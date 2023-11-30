@@ -1,0 +1,21 @@
+ALGORITHM phrase
+VAR
+    nbr_word: INTEGER // nombre de mots
+    nbr_voyelle: INTEGER // nombre de voyelle
+    phrase: STRING// la phrase donnee par le user
+BEGIN
+    //initialisation
+    nbr_word: = 1 ; //le premier mots commence sans l'espace
+    nbr_voyelle: = 0 ;
+    write("donnez une phrase")
+    read(phrase)
+        FOR i FROM 0 TO phrase.length-1 STEP 1  DO
+            IF (phrase[i] === 'a' OR phrase[i]==='o'  OR phrase[i] === "u" OR phrase[i]==='e' OR phrase[i]=== 'i' OR phrase[i]=== 'y') 
+                nbr_voyelle = nbr_voyelle+1
+            END_IF
+
+            IF (phrase[i] === ' ' ) 
+                nbr_word = nbr_word+1
+            END_IF
+        END_FOR
+END

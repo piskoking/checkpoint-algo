@@ -1,0 +1,42 @@
+ALGORITHM phrase
+VAR
+tab1: ARRAY_OF INTEGER[5];
+tab2: ARRAY_OF INTEGER[5];
+sum : INTEGER;
+i,j : INTEGER;
+siono:STRING;
+BEGIN
+//initialisation
+    siono= "non";
+    Write ("donne les valeurs aux tableaux 1");
+    FOR i FROM 0 TO 4 STEP 1 DO
+        Read (tab1[i]);
+    Write ("donne les valeurs aux tableaux 2");
+    FOR j FROM 0 TO 4 STEP 1 DO
+    Read (tab2[j]);
+    END_FOR
+    sum = 0;
+    FOR i FROM 0 TO 4 STEP 1  DO
+        FOR j FROM 0 TO 4 STEP 1  DO
+        IF (tab1[i] == tab2[j])  THEN
+            siono="oui";
+            break;
+        END_IF
+        END_FOR
+        IF (siono="no") THEN
+            sum= sum + tab1[i];
+        END_IF
+    END_FOR
+    FOR j FROM 0 TO 4 STEP 1 DO
+        FOR i FROM 0 TO 4 STEP 1 DO
+            IF (tab2[j] == tab1[i])  THEN
+            siono="oui";
+            break;
+            END_IF
+        END_FOR
+        IF (siono="no") THEN
+        sum= sum + tab2[j];
+    END_FOR
+
+    Write("La somme des éléments distincts est :",sum )
+END
