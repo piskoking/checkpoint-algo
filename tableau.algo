@@ -25,7 +25,7 @@ BEGIN
         END_FOR
         IF (siono="no") THEN
             sum= sum + tab1[i];
-        END_IF
+        END_IF 
     END_FOR
     FOR j FROM 0 TO 4 STEP 1 DO
         FOR i FROM 0 TO 4 STEP 1 DO
